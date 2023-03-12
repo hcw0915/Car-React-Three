@@ -25,7 +25,27 @@ import { FloatingGrid } from './FloatingGrid'
 const CarShow = () => {
   return (
     <>
-      {/* <Html>qweqeq</Html> */}
+      <Html
+        style={{
+          position: 'absolute',
+          top: '-700px',
+          left: '-10vw',
+          backgroundColor: '#585757',
+          borderRadius: '10px',
+          zIndex: '200',
+          width: '400px',
+          height: '50px',
+          padding: '5px 10px',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '20px',
+          fontFamily: 'consolas',
+        }}
+      >
+        Press mouse to move the camera.
+      </Html>
       <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
 
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
@@ -110,27 +130,6 @@ const CarShow = () => {
 const App = () => {
   return (
     <>
-      <div
-        style={{
-          position: 'absolute',
-          top: '20px',
-          left: '40vw',
-          backgroundColor: '#585757',
-          borderRadius: '10px',
-          zIndex: '200',
-          width: '400px',
-          height: '50px',
-          padding: '5px 10px',
-          color: 'white',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '20px',
-          fontFamily: 'consolas',
-        }}
-      >
-        Press mouse to move the camera.
-      </div>
       <Suspense fallback={<Loader />}>
         <Canvas shadows>
           <CarShow></CarShow>
