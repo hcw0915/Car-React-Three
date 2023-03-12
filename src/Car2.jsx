@@ -6,14 +6,15 @@ source: https://sketchfab.com/3d-models/chevrolet-corvette-c7-2b509d1bce104224b1
 title: Chevrolet Corvette (C7)
 */
 
-import React from 'react';
-import { useGLTF } from '@react-three/drei';
+import React from 'react'
+import { useGLTF } from '@react-three/drei'
+import modelSrc from '../src/assets/models/car/car.glb?url'
 // import { useFrame, useLoader } from '@react-three/fiber';
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 // import SceneGLTF from './assets/models/car/scene.gltf';
 
 export function CarModel(props) {
-  const { nodes, materials } = useGLTF('/src/assets/models/car/car.glb');
+  const { nodes, materials } = useGLTF(modelSrc)
 
   // 輪子不能動 QAQ
   // const gltf = useLoader(GLTFLoader, SceneGLTF);
@@ -435,7 +436,7 @@ export function CarModel(props) {
         </group>
       </group>
     </group>
-  );
+  )
 }
 
-useGLTF.preload('/src/assets/models/car/car.glb');
+useGLTF.preload('/src/assets/models/car/car.glb')
