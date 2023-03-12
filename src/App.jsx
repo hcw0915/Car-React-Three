@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import {
   CubeCamera,
   Environment,
+  Html,
   Loader,
   OrbitControls,
   PerspectiveCamera,
@@ -24,6 +25,7 @@ import { FloatingGrid } from './FloatingGrid'
 const CarShow = () => {
   return (
     <>
+      {/* <Html>qweqeq</Html> */}
       <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
 
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
@@ -97,7 +99,6 @@ const CarShow = () => {
           offset={[0.0005, 0.0012]} // color offset
         />
       </EffectComposer>
-
       {/* <mesh>
         <boxGeometry args={[1, 1, 1]} />
         <meshBasicMaterial color={'red'} />
@@ -108,11 +109,34 @@ const CarShow = () => {
 
 const App = () => {
   return (
-    <Suspense fallback={<Loader />}>
-      <Canvas shadows>
-        <CarShow></CarShow>
-      </Canvas>
-    </Suspense>
+    <>
+      <div
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '40vw',
+          backgroundColor: '#585757',
+          borderRadius: '10px',
+          zIndex: '200',
+          width: '400px',
+          height: '50px',
+          padding: '5px 10px',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '20px',
+          fontFamily: 'consolas',
+        }}
+      >
+        Press mouse to move the camera.
+      </div>
+      <Suspense fallback={<Loader />}>
+        <Canvas shadows>
+          <CarShow></CarShow>
+        </Canvas>
+      </Suspense>
+    </>
   )
 }
 
