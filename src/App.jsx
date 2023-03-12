@@ -1,24 +1,24 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
 import {
   CubeCamera,
   Environment,
   OrbitControls,
   PerspectiveCamera,
-} from '@react-three/drei';
-import './styles.css';
-import { Ground } from './Ground';
-import { Rings } from './Rings';
-import { CarModel } from './Car2';
-import { Boxes } from './Boxes';
+} from '@react-three/drei'
+import './styles.css'
+import { Ground } from './Ground'
+import { Rings } from './Rings'
+import { CarModel } from './Car2'
+import { Boxes } from './Boxes'
 import {
   Bloom,
   ChromaticAberration,
   DepthOfField,
   EffectComposer,
-} from '@react-three/postprocessing';
-import { BlendFunction } from 'postprocessing';
-import { FloatingGrid } from './FloatingGrid';
+} from '@react-three/postprocessing'
+import { BlendFunction } from 'postprocessing'
+import { FloatingGrid } from './FloatingGrid'
 
 const CarShow = () => {
   return (
@@ -27,7 +27,7 @@ const CarShow = () => {
 
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
 
-      {/* let color = new Color(0, 0, 0) 設定背景顏色 */}
+      {/* let color = new Color(0, 0, 0) 設定背景顏色dd */}
       <color args={[0, 0, 0]} attach="background" />
 
       <CubeCamera resolution={512} frames={Infinity}>
@@ -102,8 +102,8 @@ const CarShow = () => {
         <meshBasicMaterial color={'red'} />
       </mesh> */}
     </>
-  );
-};
+  )
+}
 
 const App = () => {
   return (
@@ -112,7 +112,7 @@ const App = () => {
         <CarShow></CarShow>
       </Canvas>
     </Suspense>
-  );
-};
+  )
+}
 
-export default App;
+export default App
