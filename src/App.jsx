@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import {
   CubeCamera,
   Environment,
+  Loader,
   OrbitControls,
   PerspectiveCamera,
 } from '@react-three/drei'
@@ -107,7 +108,7 @@ const CarShow = () => {
 
 const App = () => {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <Canvas shadows>
         <CarShow></CarShow>
       </Canvas>
